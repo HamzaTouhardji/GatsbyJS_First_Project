@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Montserrat";
+    color: white;
+}
+html, body {
+    min-height: 100%;
+}
+body {
+    background: radial-gradient(at top left, rgba(255, 114, 129, 1), rgba(255, 146, 94, 1) 100%);
+    background-repeat: no-repeat;
+}
+p {
+    margin: 16px auto;
+    line-height: 1.5em;
+}
+
+/* layout and nav */
+.layout {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 40px auto;
+}
+nav .links {
+    display: inline-block;
+    text-align: right;
+}
+nav a {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: 400;
+    padding-bottom: 8px;
+    border-bottom: 3px solid transparent;
+}
+nav a:hover {
+    border-color: white;
+}
+footer p {
+    text-align: center;
+    color: #bbb;
+    margin: 40px auto;
+}
