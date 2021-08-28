@@ -7,6 +7,9 @@
 .header h2 {
     font-size: 4em;
 }
+.header p {
+    text-align: justify;
+}
 .header h3 {
     font-size: 3em;
     font-weight: 400;

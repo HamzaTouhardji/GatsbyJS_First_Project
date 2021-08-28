@@ -13,7 +13,7 @@ export default function Layout({children}) {
 
             </div>
             <footer>
-                <p>Copyright 2021 Web Site</p>
+                <p> Copyright 2021 Web Site</p>
             </footer>
         </div>
     )
