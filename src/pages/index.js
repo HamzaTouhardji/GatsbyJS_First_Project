@@ -3,14 +3,13 @@ import React from "react"
 import Layout from '../pages/components/Layout'
 import * as styles from '../pages/styles/home.module.css'
 
-export default function Home({ data}) {
-  console.log(data)
-  const {title, description} = data.site.siteMetadata
+export default function Home({ data }) {
+  const projects = data.allMarkdownRemark.nodes
   return (
     <Layout>
       <section className={styles.header}>
         <div>
-          <h2>Desissgn</h2>
+          <h2>Desisgn</h2>
           <h3>Develop and Deploy</h3>
           <p>Mollit esse cillum culpa excepteur aliquip fugiat minim reprehenderit.
           Mollit esse cillum culpa excepteur aliquip fugiat minim reprehenderit.
@@ -18,21 +17,28 @@ export default function Home({ data}) {
           Mollit esse cillum culpa excepteur aliquip fugiat minim reprehenderit.
           Mollit esse cillum culpa excepteur aliquip fugiat minim reprehenderit.</p>
 
-          voici la data =  {title}, {description}
-          <Link className={styles.btn} to="/about">About</Link>
+          <Link className={styles.btn} to="/tasks">About</Link>
         </div>
         <img src="image.png" alt="website home" style={{maxWidth: '100%'}} />
+
+        <div>
+          {projects.map(project => (
+                <h3> {project.frontmatter.title} </h3>
+          ))}
+        </div>
       </section>
     </Layout>
   )
 }
-
 export const query = graphql`
-  query SiteInfo {
-    site {
-      siteMetadata {
-        description, 
-        title
+  query ProjectPage {
+    allMarkdownRemark {
+      nodes{
+        frontmatter{
+          stack
+          title
+        }
+        id
       }
     }
   }`
